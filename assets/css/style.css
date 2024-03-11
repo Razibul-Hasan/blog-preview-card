@@ -1,27 +1,65 @@
+@font-face {
+  font-family: figtree;
+  src: url(/assets/fonts/static/Figtree-ExtraBold.ttf);
+  font-weight: 800;
+}
+@font-face {
+  font-family: figtree;
+  src: url(/assets/fonts/static/Figtree-SemiBold.ttf);
+  font-weight: 700;
+}
+
 * {
   margin: 0 auto;
   padding: 0;
   box-sizing: border-box;
 }
+
 body {
   background-color: hsl(47, 88%, 63%);
+  font-family: figtree;
 }
-img {
-  border-radius: 10px;
-}
+
 .wrapper {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 380px;
+  width: 100vw;
   height: 100vh;
+  display: grid;
+  justify-content: center;
+  align-content: center;
 }
 
 .card {
   background-color: hsl(0, 0%, 100%);
+  width: 400px;
+  height: fit-content;
   padding: 15px 20px;
   border-radius: 15px;
+  display: flex;
+  flex-direction: column;
+  font-size: 1rem;
+  align-items: flex-start;
+  border: 1px solid black;
+  box-shadow: 5px 5px 0px 1px hsl(0, 0%, 7%);
+  transition: ease-in-out 0.3s;
+}
+.card:hover {
+  box-shadow: 10px 10px 0px 1px hsl(0, 0%, 7%);
+}
+.card img {
+  border-radius: 5%;
+  width: 100%;
+}
+
+.card-title {
+  font-weight: 800;
+  margin: 15px 0px;
+  font-size: 19px;
+  transition: ease-in-out 0.3s;
+}
+
+.card-title:hover {
+  color: hsl(47, 88%, 63%);
+  cursor: pointer;
 }
 
 .card-category {
@@ -30,12 +68,44 @@ img {
   color: black;
   padding: 10px 10px;
   border-radius: 5px;
-  margin: 10px 0px;
+  margin: 20px 0px;
   font-weight: bold;
+}
+.card-date {
+  display: contents;
+}
+
+.card-desc {
+  color: hsl(0, 0%, 50%);
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 1.5;
 }
 
 .author {
-  display: inline-flex;
+  display: flex;
   align-items: center;
-  gap: 14px;
+  margin: 7px 0px;
+  gap: 10px;
+}
+
+.author > h5 {
+  font-weight: 800;
+  font-size: 15px;
+}
+.author > img {
+  border-radius: 10px;
+  width: 40px;
+  height: 40px;
+}
+
+/* Responsive Design for 375 px devices */
+
+@media only screen and (max-width: 375px) {
+  .card {
+    width: 300px;
+    height: fit-content;
+    margin: 0;
+    padding: 7px 5px;
+  }
 }
